@@ -26,7 +26,7 @@ function App() {
       id: 4,
       question: "What is 'our' song?",
       clue: "By PartyNextDoor.",
-      answer: "Resentment PND"
+      answer: "Resentment"
     },
     {
       id: 5,
@@ -62,7 +62,7 @@ function App() {
       id: 10,
       question: "What is the nickname I call you the most?",
       clue: "It's what I always say when I see you.",
-      answer: "La Princessa" 
+      answer: "Jolizzy" 
     },
   ];
 
