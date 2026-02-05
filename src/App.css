@@ -1,0 +1,221 @@
+/* Import a cute font */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap");
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+:root {
+  --primary: #ff4d6d;
+  --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  --glass: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: var(--bg-gradient);
+  font-family: "Quicksand", sans-serif;
+  color: #592e34;
+}
+
+.app-container {
+  max-width: 1200px; /* Increased from 800px to 1200px */
+  width: 90%; /* Ensures it doesn't touch the edges on mobile */
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  color: #d6336c;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+/* The Grid of Cards */
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Made cards slightly wider */
+  gap: 30px; /* Increased gap for better spacing */
+  margin: 40px 0;
+  justify-content: center;
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Correct Answer State */
+.card.correct {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #ff4d6d;
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.3);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #592e34; /* <--- THIS FIXES IT (Dark text on white background) */
+  font-weight: bold;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  outline: none;
+  transition:
+    border 0.3s,
+    box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #ff4d6d;
+  box-shadow: 0 0 8px rgba(255, 77, 109, 0.3);
+}
+
+/* HIDDEN SECTION STYLES */
+.secret-section {
+  animation: fadeIn 2s ease-in;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  border-radius: 30px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slideshow Placeholder */
+.slideshow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  height: 400px; /* Keeps the layout stable */
+}
+.polaroid-frame {
+  background: white;
+  padding: 15px 15px 40px 15px; /* Extra padding at bottom for polaroid look */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg); /* Cute tilt */
+  transition: transform 0.5s ease;
+  width: 300px;
+  text-align: center;
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.05); /* Straighten when hovered */
+}
+
+.slide-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Ensures photos don't stretch weirdly */
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.caption {
+  font-family: "Pacifico", cursive;
+  color: #555;
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+.photo-frame {
+  width: 150px;
+  height: 150px;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg);
+}
+
+.photo-frame:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+/* The Big Question */
+.final-proposal h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 3.5rem;
+  color: #ff4d6d;
+  margin-top: 40px;
+}
+
+.yes-btn {
+  background-color: #ff4d6d;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: "Pacifico", cursive;
+  transition: transform 0.2s;
+}
+
+.yes-btn:hover {
+  transform: scale(1.1);
+}
+
+.no-btn {
+  background-color: #ddd;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: not-allowed;
+}
+/* ... keep your other CSS ... */
+
+/* New Love Letter Styles */
+.love-letter {
+  max-width: 600px;
+  margin: 0 auto 30px auto; /* Centers it and adds space below */
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: 'Indie Flower', 'Pacifico', cursive; /* Handwritten vibe */
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #592e34;
+  transform: rotate(-1deg); /* Slight tilt like a real letter */
+}
+
+.love-letter p {
+  margin: 0;
+}
